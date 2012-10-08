@@ -11,6 +11,8 @@
           fetch="git://codeaurora.org/" />
   <remote  name="linaro"
            fetch="git://android.git.linaro.org/" />
+  <remote name="jhford"
+          fetch="git://github.com/jhford/" />
   <default revision="ics_chocolate_rb4.2"
            remote="caf"
            sync-j="4" />
@@ -18,6 +20,19 @@
   <!-- Gonk specific things and forks -->
   <project path="build" name="platform_build" remote="b2g" revision="master">
     <copyfile src="core/root.mk" dest="Makefile" />
+  </project>
+  <project path="b2g-scripts" name="B2G-scripts" remote="jhford" revision="master">
+    <copyfile src="build.sh" dest="build.sh" />
+    <copyfile src="config-device.sh" dest="config-device.sh" />
+    <copyfile src="flash.sh" dest="flash.sh" />
+    <copyfile src="get-about-memory.py" dest="get-about-memory.py" />
+    <copyfile src="load-config.sh" dest="load-config.sh" />
+    <copyfile src="profile" dest="profile" />
+    <copyfile src="run-ddd.sh" dest="run-ddd.sh" />
+    <copyfile src="run-gdb.sh" dest="run-gdb.sh" />
+    <copyfile src="run-emulator.sh" dest="run-emulator.sh" />
+    <copyfile src="test.sh" dest="test.sh" />
+    <copyfile src="setup.sh" dest="setup.sh" />
   </project>
   <project path="dalvik" name="fake-dalvik" remote="b2g" revision="master" />
   <project path="gaia" name="gaia" remote="b2g" revision="master" />
